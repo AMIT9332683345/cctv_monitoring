@@ -1,0 +1,28 @@
+# Secrets — never commit real values
+.env
+.env.*
+!.env.example
+backend/.env
+gateway/.env
+frontend/.env
+frontend/.env.local
+
+# Dependencies and build output
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+coverage/
+
+# Gateway runtime data (state, encrypted DVR password, master key, clips, buffer)
+gateway/data/
+gateway/data-*/
+gateway/init.mp4
+
+# Scratch and logs
+tmp/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

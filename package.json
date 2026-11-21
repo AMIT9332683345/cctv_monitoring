@@ -1,0 +1,28 @@
+{
+  "name": "opps-cctv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OPPS CCTV - private single-owner CCTV platform with local Windows gateway",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "gateway"
+  ],
+  "scripts": {
+    "build": "npm --workspace frontend run build",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "start:backend": "node backend/src/index.mjs",
+    "start:gateway": "node gateway/src/index.mjs",
+    "typecheck": "npm --workspace frontend exec -- tsc --noEmit",
+    "test": "node scripts/smoke-backend.mjs && node scripts/smoke-gateway.mjs",
+    "test:backend": "node scripts/smoke-backend.mjs",
+    "test:gateway": "node scripts/smoke-gateway.mjs"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}

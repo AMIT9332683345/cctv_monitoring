@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: opps-cctv-api
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: .
+    buildCommand: echo "backend has no build step"
+    startCommand: node backend/src/index.mjs
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_DB
+        value: opps_cctv
+      - key: ALLOW_MEMORY_STORE
+        value: "false"
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: COOKIE_SAMESITE
+        value: none
+      - key: TRUST_PROXY
+        value: "true"
+      - key: ACCESS_TOKEN_TTL_SEC
+        value: "900"
+      - key: REFRESH_TOKEN_TTL_SEC
+        value: "2592000"
+      - key: GATEWAY_ONLINE_WINDOW_SEC
+        value: "45"
+      - key: LOG_LEVEL
+        value: info
+      - key: MONGODB_URI
+        sync: false
+      - key: AUTH_SECRET
+        sync: false
+      - key: SETUP_TOKEN
+        sync: false
+      - key: GATEWAY_TOKEN
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false

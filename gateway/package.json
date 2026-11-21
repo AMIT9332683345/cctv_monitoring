@@ -1,0 +1,10 @@
+{
+  "name": "@opps/gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.mjs",
+  "scripts": {
+    "start": "node src/index.mjs"
+  }
+}
